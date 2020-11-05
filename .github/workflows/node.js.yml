@@ -31,7 +31,6 @@ jobs:
     - run: npm test
       working-directory: my-app
     - name: Deploy  
-      working-directory: my-app
       run: |
         git config --global user.name $user_name
         git config --global user.email $user_email 
@@ -42,3 +41,4 @@ jobs:
        user_email: 'github-actions[bot]@users.noreply.github.com'
        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
        repository: ${{ github.repository }}    
+      working-directory: my-app
